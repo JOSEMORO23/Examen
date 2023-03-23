@@ -234,6 +234,13 @@ public class Controladorempleado {
         }
         return press;
     }
+      private boolean ValidData(String data) {
+        boolean isvalid = true;
+        if (data.isEmpty()) {
+            isvalid = false;
+        }
+        return isvalid;
+    }
 
     private void crearEditarEliminarEmpleado() {
         if (ve.getDlgcrudempleados().getName().equals("crear")) {
@@ -248,49 +255,11 @@ public class Controladorempleado {
                 String discapacidad = ve.getTxtdiscapacidad().getText().trim();
                 String horario = ve.getTxthorario().getText().trim();
 
-//                if (!ValidData(numeroidentificacion)) {
-//                    JOptionPane.showMessageDialog(vp, "El campo de número de documento no puede quedar vacío");
-//                    return;
-//                }
-//
-//                if (!ValidData(nombre)) {
-//                    JOptionPane.showMessageDialog(vp, "El campo del nombre no puede quedar vacío");
-//                    return;
-//                }
-//
-//                if (!ValidData(apellido)) {
-//                    JOptionPane.showMessageDialog(vp, "El campo del apellido no puede quedar vacío");
-//                    return;
-//                }
-//                if (!ValidData(telefono)) {
-//                    JOptionPane.showMessageDialog(vp, "El campo de teléfono no puede quedar vacío");
-//                    return;
-//                }
-//                if (!ValidData(sexo)) {
-//                    JOptionPane.showMessageDialog(vp, "Elija el sexo");
-//                    return;
-//                }
-//                if (!validateDate(fechanac)) {
-//                    JOptionPane.showMessageDialog(vp, "Ingrese una fecha de nacimiento válida. \n"
-//                            + "Recuerde que la persona debe ser mayor de edad.");
-//                    return;
-//                }
-//                if (!ValidData(direccion)) {
-//                    JOptionPane.showMessageDialog(vp, "El campo de la dirección no puede quedar vacío");
-//                    return;
-//                }
-//                if (!ValidData(email)) {
-//                    JOptionPane.showMessageDialog(vp, "El campo del email no es válido");
-//                    return;
-//                }
-////                if (!validateCorreo()) {
-////                    JOptionPane.showMessageDialog(vp, "Proporcione correo válido\n");
-////                    return;
-////                }
-//                if (!Cedula.validarCedula(numeroidentificacion)) {
-//                    JOptionPane.showMessageDialog(vp, "Proporcione un número de identificación válido");
-//                    return;
-//                }
+                if (!ValidData(cedula)) {
+                    JOptionPane.showMessageDialog(ve, "El campo de número de documento no puede quedar vacío");
+                    return;
+                }
+
                 Modeloempleado persona = new Modeloempleado();
 
                 persona.setCedula(cedula);
@@ -327,45 +296,7 @@ public class Controladorempleado {
                     String discapacidad = ve.getTxtdiscapacidad().getText().trim();
                     String horario = ve.getTxthorario().getText().trim();
 
-//                    if (!ValidData(numeroidentificacion)) {
-//                        JOptionPane.showMessageDialog(vp, "El campo de número de documento no puede quedar vacío");
-//                        return;
-//                    }
-//
-//                    if (!ValidData(nombre)) {
-//                        JOptionPane.showMessageDialog(vp, "El campo del nombre no puede quedar vacío");
-//                        return;
-//                    }
-//
-//                    if (!ValidData(apellido)) {
-//                        JOptionPane.showMessageDialog(vp, "El campo del apellido no puede quedar vacío");
-//                        return;
-//                    }
-//                    if (!ValidData(telefono)) {
-//                        JOptionPane.showMessageDialog(vp, "El campo de teléfono no puede quedar vacío");
-//                        return;
-//                    }
-//                    if (!ValidData(sexo)) {
-//                        JOptionPane.showMessageDialog(vp, "Elija el sexo");
-//                        return;
-//                    }
-//
-//                    if (!ValidData(direccion)) {
-//                        JOptionPane.showMessageDialog(vp, "El campo de la dirección no puede quedar vacío");
-//                        return;
-//                    }
-//                    if (!ValidData(email)) {
-//                        JOptionPane.showMessageDialog(vp, "El campo del email no es válido");
-//                        return;
-//                    }
-////                    if (!validateCorreo()) {
-////                        JOptionPane.showMessageDialog(vp, "Proporcione correo válido\n");
-////                        return;
-////                    }
-//                    if (!Cedula.validarCedula(numeroidentificacion)) {
-//                        JOptionPane.showMessageDialog(vp, "Proporcione un número de identificación válido");
-//                        return;
-//                    }
+
                     Modeloempleado persona = new Modeloempleado();
 
                     persona.setCedula(cedula);
